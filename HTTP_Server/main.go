@@ -10,7 +10,7 @@ import (
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", handleHello)
-	mux.HandleFunc(".goodbye", handleGoodbye)
+	mux.HandleFunc("/goodbye", handleGoodbye)
 
 	log.Fatal(http.ListenAndServe(":8080", mux))
 }
@@ -23,6 +23,7 @@ func handleHello(w http.ResponseWriter, _ *http.Request) {
 	}
 
 	fmt.Printf("%d bytes written\n", wc)
+
 	return
 }
 
@@ -33,5 +34,6 @@ func handleGoodbye(w http.ResponseWriter, _ *http.Request) {
 		return
 	}
 	fmt.Printf("%d bytes written\n", wc)
+
 	return
 }
