@@ -13,6 +13,7 @@ func main() {
 	fmt.Println(x, y)
 
 	main1()
+	main2()
 }
 
 func swap1(a, b string) (string, string) {
@@ -26,4 +27,15 @@ func swap1(a, b string) (string, string) {
 func main1() {
 	a, b := swap1("he", "wo")
 	fmt.Println(a, b)
+}
+
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
+
+}
+
+func main2() {
+	fmt.Println(split(17))
 }
